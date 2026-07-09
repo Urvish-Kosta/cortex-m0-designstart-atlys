@@ -1,0 +1,40 @@
+Example serial session (9600 8N1)
+=================================
+
+This transcript illustrates the EXPECTED console interaction with the
+demonstrator firmware. It is a hand-written illustration of the firmware's
+output strings (see firmware/src/main.c), not a capture from hardware. Replace
+with a real PuTTY log once run on an Atlys board.
+
+--- after reset ---
+
+****************************************************
+**  Cortex-M0 DesignStart on Digilent Atlys       **
+**  LEDs and switches GPIO demonstration          **
+****************************************************
+Choose Task:
+BTN0: Print PWM value.
+BTN1: 'Cylon' LED display.
+BTN2: Scrolling LED display.
+BTN3: Return to this menu.
+
+--- switches set to 1010 1010, user presses BTN0 ---
+
+PWM value: 170
+
+--- user presses BTN1 ---
+
+'Cylon' LED display. Press BTN3 to stop.
+(the lit LED now bounces LD0 -> LD7 -> LD0 until BTN3)
+
+--- user presses BTN3 ---
+
+****************************************************
+**  Cortex-M0 DesignStart on Digilent Atlys       **
+**  LEDs and switches GPIO demonstration          **
+****************************************************
+Choose Task:
+BTN0: Print PWM value.
+BTN1: 'Cylon' LED display.
+BTN2: Scrolling LED display.
+BTN3: Return to this menu.
