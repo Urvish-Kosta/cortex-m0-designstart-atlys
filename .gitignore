@@ -1,0 +1,104 @@
+# =============================================================================
+# ARM Cortex-M0 DesignStart core  --  MUST NOT be committed
+# -----------------------------------------------------------------------------
+# The DesignStart processor RTL is licensed IP from Arm. The licence is granted
+# to the individual who downloads it and does NOT permit public redistribution.
+# The core files must be obtained from Arm directly and placed in the directory
+# below. See third_party/arm_cortex_m0_designstart/README.md.
+# =============================================================================
+third_party/arm_cortex_m0_designstart/**
+!third_party/arm_cortex_m0_designstart/README.md
+!third_party/arm_cortex_m0_designstart/.gitkeep
+
+# -----------------------------------------------------------------------------
+# Xilinx ISE 14.x build artefacts
+# -----------------------------------------------------------------------------
+*.bit
+*.bgn
+*.bld
+*.drc
+*.ncd
+*.ngc
+*.ngd
+*.ngr
+*.pcf
+*.par
+*.ptwx
+*.rbt
+*.twr
+*.twx
+*.unroutes
+*.xpi
+*.xwbt
+*_map.*
+*_summary.*
+*_usage.*
+_ngo/
+_xmsgs/
+xlnx_auto_0_xdb/
+xst/
+iseconfig/
+*.lso
+*.gise
+*.cmd_log
+*.stx
+*.syr
+*.bgn
+
+# -----------------------------------------------------------------------------
+# Xilinx Vivado build artefacts
+# -----------------------------------------------------------------------------
+*.jou
+*.log
+*.str
+.Xil/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+vivado*.backup.jou
+vivado*.backup.log
+usage_statistics_webtalk.*
+
+# -----------------------------------------------------------------------------
+# Simulation outputs (ISim / ModelSim / GHDL)
+# -----------------------------------------------------------------------------
+*.wdb
+*.wcfg
+isim/
+work/
+transcript
+*.vcd
+*.ghw
+*.cf
+*.o
+*.exe
+
+# -----------------------------------------------------------------------------
+# Firmware build outputs (Keil MDK / arm-none-eabi-gcc)
+# -----------------------------------------------------------------------------
+firmware/build/
+*.axf
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.crf
+*.d
+*.dep
+*.o
+*.__i
+*.uvguix.*
+
+# -----------------------------------------------------------------------------
+# Editor / OS
+# -----------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
