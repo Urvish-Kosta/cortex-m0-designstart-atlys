@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  hdl-testbenches:
+    name: VHDL testbenches (GHDL)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GHDL
+        run: sudo apt-get update && sudo apt-get install -y ghdl
+      - name: Run peripheral testbenches
+        run: ./sim/scripts/run_tests.sh
+
+  firmware-unit-tests:
+    name: Firmware unit tests (Unity, host)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run Unity tests
+        run: make -C firmware/test
+
+  firmware-build:
+    name: Firmware cross-build (arm-none-eabi-gcc)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install GNU Arm Embedded toolchain
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi
+      - name: Build firmware image
+        run: make -C firmware
+      - name: Upload firmware artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware
+          path: |
+            firmware/build/firmware.elf
+            firmware/build/firmware.bin
+            firmware/build/firmware.hex
