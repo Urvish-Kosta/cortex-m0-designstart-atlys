@@ -14,7 +14,7 @@ jobs:
       - name: Install GHDL
         run: sudo apt-get update && sudo apt-get install -y ghdl
       - name: Run peripheral testbenches
-        run: ./sim/scripts/run_tests.sh
+        run: bash ./sim/scripts/run_tests.sh
 
   firmware-unit-tests:
     name: Firmware unit tests (Unity, host)
